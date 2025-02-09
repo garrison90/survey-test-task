@@ -15,7 +15,7 @@
 
 3. **Configure Environment Variables**
 
-Create a .env file in the root directory of the project. You can refer to the example provided in the .env.example file.
+Create a `.env` file in the root directory of the project. You can refer to the example provided in the `.env.example` file.
 
 Make sure to include the following variable:
 
