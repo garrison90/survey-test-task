@@ -1,14 +1,11 @@
 "use client";
-import { useSelector } from "react-redux";
 
-import { selectAnswers } from "@/store/features/survey/selectors";
+import useSurveyResults from "@/components/SurveyResults/hooks/useSurveyResults";
 
 import sm from "./styles.module.scss";
 
 const SurveyResults = () => {
-  const answers = useSelector(selectAnswers);
-
-  const answersData = Object.values(answers);
+  const { answersData, handleResetClick } = useSurveyResults();
 
   return (
     <section className={sm.Section}>
@@ -18,6 +15,9 @@ const SurveyResults = () => {
           <p>{item?.value}</p>
         </div>
       ))}
+      <button type="button" className={sm.Button} onClick={handleResetClick}>
+        Reset
+      </button>
     </section>
   );
 };
