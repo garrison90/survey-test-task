@@ -1,0 +1,12 @@
+@use "@/styles/colors" as colors;
+
+.Section {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  color: colors.$wash-me;
+
+  & > div:not(:last-of-type) {
+    margin-bottom: 20px;
+  }
+}

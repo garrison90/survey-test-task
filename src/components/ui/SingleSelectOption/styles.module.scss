@@ -1,0 +1,26 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/variables" as variables;
+
+.Button {
+  width: 100%;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+  border-radius: 16px;
+  background-color: colors.$bath-foam;
+  box-shadow: 2px 2px 6px 0 rgba(84, 60, 151, 0.25);
+  border: 1px solid colors.$christmas-silver;
+  color: colors.$umbra;
+  text-align: center;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 19.6px;
+  transition:
+    color 0.2s ease-in-out,
+    background 0.5s ease-in-out;
+
+  &:hover,
+  &:active {
+    background: variables.$primary-linear-gradient;
+    color: colors.$wash-me;
+  }
+}

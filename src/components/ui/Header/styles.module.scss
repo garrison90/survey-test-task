@@ -1,0 +1,12 @@
+@use "@/styles/mixins" as mixins;
+@use "@/styles/breakpoints" as breakpoints;
+
+.Header {
+  position: relative;
+  @include mixins.flex-centered;
+  height: 54px;
+
+  @include mixins.screen-max-width(breakpoints.$max-mobile-width) {
+    height: 44px;
+  }
+}

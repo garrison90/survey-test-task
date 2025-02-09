@@ -1,0 +1,39 @@
+@use "@/styles/colors" as colors;
+@use "@/styles/mixins" as mixins;
+@use "@/styles/breakpoints" as breakpoints;
+@use "@/styles/variables" as variables;
+
+.Wrapper {
+  @include mixins.flex-column;
+  background: var(--background, variables.$primary-linear-gradient);
+  height: 100dvh;
+}
+
+.Section {
+  @include mixins.flex-centered;
+
+  @include mixins.screen-max-width(breakpoints.$max-mobile-width) {
+    margin: 0 15px;
+  }
+}
+
+.Content {
+  width: 330px;
+  color: colors.$wash-me;
+  text-align: center;
+}
+
+.Title {
+  margin-top: 16px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.Description {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 25.2px;
+  margin-bottom: 40px;
+}

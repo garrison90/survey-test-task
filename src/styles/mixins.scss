@@ -1,0 +1,20 @@
+@mixin flex {
+  display: flex;
+}
+
+@mixin flex-column {
+  @include flex;
+  flex-direction: column;
+}
+
+@mixin flex-centered {
+  @include flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin screen-max-width($max-width) {
+  @media (max-width: $max-width) {
+    @content;
+  }
+}

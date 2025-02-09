@@ -1,0 +1,11 @@
+@use "@/styles/mixins" as mixins;
+@use "@/styles/breakpoints" as breakpoints;
+
+.BackButton {
+  position: absolute;
+  left: 18%;
+
+  @include mixins.screen-max-width(breakpoints.$max-mobile-width) {
+    left: 15px;
+  }
+}
