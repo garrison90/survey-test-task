@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 
-import { clearSurveySliceData, setSurveyQuestions } from "@/store/features/survey/slice";
+import { setSurveyQuestions } from "@/store/features/survey/slice";
 
 import { ENDPOINTS } from "@/constants/ENDPOINTS";
 import { createApiUrl } from "@/utils/createApiUrl";
@@ -17,7 +17,6 @@ const ClientSurveyDataProvider = () => {
       const response = await fetch(endpoint);
       const config = await response.json();
 
-      dispatch(clearSurveySliceData());
       dispatch(setSurveyQuestions(config));
     };
 

@@ -6,7 +6,7 @@
 .Wrapper {
   @include mixins.flex-column;
   background: var(--background, variables.$primary-linear-gradient);
-  height: 100dvh;
+  min-height: 100dvh;
 }
 
 .Section {

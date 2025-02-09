@@ -1,4 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
 
 import { SurveyQuestionsType } from "@/types/SurveyQuestionsType";
 
@@ -44,13 +46,17 @@ const surveySlice = createSlice({
       delete state.answers[answerKey];
     },
 
-    clearSurveySliceData: (state) => {
+    clearSurveyAnswersData: (state) => {
       state.answers = initialState.answers;
-      state.surveyQuestions = initialState.surveyQuestions;
     },
   },
 });
 
-export const { clearAnswerByPageName, clearSurveySliceData, saveAnswer, setSurveyQuestions } = surveySlice.actions;
+export const { clearAnswerByPageName, clearSurveyAnswersData, saveAnswer, setSurveyQuestions } = surveySlice.actions;
 
-export default surveySlice.reducer;
+const persistConfig = {
+  key: "survey",
+  storage,
+};
+
+export default persistReducer(persistConfig, surveySlice.reducer);
